@@ -22,7 +22,7 @@ public class LibraryTest {
   }
 
   @Test
-  public void testAddBookAlreadyInLibrary() {
+  public void shouldThrowDuplicatedBookExceptionBecauseBookAlreadyInLibrary() {
 
     String title = "Metro 2033";
     Book book = new Book(title);
@@ -59,19 +59,27 @@ public class LibraryTest {
   }
 
   @Test
-  public void testDeleteBookNotInLibrary() {
+  public void shouldThrowNonExistingBookExceptionBecauseBookNotInLibrary() {
 
-    String title = "Metro 2033";
-    Book book = new Book(title);
+    String title1 = "Metro 2033";
+    Book book1 = new Book(title1);
+    String title2 = "Metro 2035";
+    Book book2 = new Book(title1);
     Library lib = new Library();
 
+		try {
+      lib.addBook(book1);
+    }catch (Exception e) {
+      e.printStackTrace();
+    }
+				
     assertThrows(NonExistingBookException.class, () -> {
-        lib.removeBook(book);
+        lib.removeBook(book2);
       });
   }
 
   @Test
-  public void testDeleteBookOnEmptyLibrary() {
+  public void shouldThrowEmptyLibraryExceptionBecauseCannotRemoveBookFromEmptyLibrary() {
 
     String title = "Metro 2033";
     Book book = new Book(title);
@@ -99,7 +107,7 @@ public class LibraryTest {
   }
 
   @Test
-  public void testGetBookNotInLibrary() {
+  public void shouldThrowNonExistingBookExceptionBecauseCannotGetBookNotInLibrary() {
 
     String title1 = "Metro 2034";
     String title2 = "Metro 2035";
@@ -119,7 +127,7 @@ public class LibraryTest {
   }
 
   @Test
-  public void testGetBookFromEmptyLibrary() {
+  public void shouldThrowEmptyLibraryExceptionBecauseCannotGetBookFromEmptyLibrary() {
 
     String title = "Metro 2034";
     Library lib = new Library();
