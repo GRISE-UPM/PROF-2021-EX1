@@ -90,5 +90,19 @@ public class LibraryTest {
 				});
 	}
 	
+	@Test
+	public void libronoexistente(){
+		
+		assertThrows(NonExistingBookException.class,
+	            new Executable() {
+					public void execute() throws Throwable {
+						Library libr = new Library();
+						Book tarzan = new Book("Tarzan");
+						libr.addBook(tarzan);
+						libr.getBook("Tarzan2");
+					}
+				});
+	}
+	
 
 }
