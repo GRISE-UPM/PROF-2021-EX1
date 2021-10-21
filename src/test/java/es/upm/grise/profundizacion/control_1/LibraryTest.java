@@ -1,5 +1,5 @@
 package es.upm.grise.profundizacion.control_1;
-//Esta es una prueba del pullRequest
+//Esta es una prueba del pullRequest2
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
