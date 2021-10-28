@@ -8,8 +8,45 @@
   <artifactId>control-1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>control-1</name>
-  <description>Proyecto para la realización del control 1</description>
-  <url>https://github.com/GRISE-UPM/PROF-2021-EX1</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- <maven.compiler.source>1.7</maven.compiler.source> -->
+        <!-- <maven.compiler.target>1.7</maven.compiler.target> -->
+        <junit-platform.version>1.6.2</junit-platform.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <maven.version>3.8.0</maven.version>
+        <java.version>8</java.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <name>control-1</name>
+  <description>Proyecto para la realización del control 1</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.version}</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+        </plugins>
+    </build>
+  <url>https://github.com/GRISE-UPM/PROF-2021-EX1</url>
 </project>
