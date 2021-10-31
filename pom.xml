@@ -11,6 +11,11 @@
   <name>control-1</name>
   <description>Proyecto para la realización del control 1</description>
   <url>https://github.com/GRISE-UPM/PROF-2021-EX1</url>
+  
+  <properties>
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
 
   <dependencies>
   	<dependency>
