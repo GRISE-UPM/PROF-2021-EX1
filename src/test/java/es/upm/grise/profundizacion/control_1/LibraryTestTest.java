@@ -1,24 +1,21 @@
 package es.upm.grise.profundizacion.control_1;
 
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+import org.junit.jupiter.api.Assertions.*;
 
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.Assert;
+
     
 public class LibraryTestTest {
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 
 
 	@Test
@@ -26,7 +23,7 @@ public class LibraryTestTest {
 		Book b1 = new Book("Libro1");
 		Library l1 = new Library();
 		l1.addBook(b1);
-		Assert.assertEquals(b1.getTitle(), l1.getBook(b1.getTitle()).getTitle());
+		Assertions.assertEquals(b1.getTitle(), l1.getBook(b1.getTitle()).getTitle());
 		
 	}
 	@Test
@@ -35,7 +32,7 @@ public class LibraryTestTest {
 		Book b2 = new Book("Libro1");
 		Library l1 = new Library();
 		l1.addBook(b1);
-		assertThrows(DuplicatedBookException.class, () -> l1.addBook(b2));
+		Assertions.assertThrows(DuplicatedBookException.class, () -> l1.addBook(b2));
 		
 	}
 	@Test
@@ -46,14 +43,14 @@ public class LibraryTestTest {
 		l1.addBook(b1);
 		l1.addBook(b2);
 		l1.removeBook(b1);
-		assertThrows(NonExistingBookException.class, () -> l1.getBook(b1.getTitle()));
+		Assertions.assertThrows(NonExistingBookException.class, () -> l1.getBook(b1.getTitle()));
 	}
 	@Test
 	public void test_get_book() throws DuplicatedBookException, NonExistingBookException, EmptyLibraryException{
 		Book b1 = new Book("Libro1");
 		Library l1 = new Library();
 		l1.addBook(b1);
-		Assert.assertEquals(b1.getTitle(),l1.getBook(b1.getTitle()).getTitle());
+		Assertions.assertEquals(b1.getTitle(),l1.getBook(b1.getTitle()).getTitle());
 	}
 
 }
