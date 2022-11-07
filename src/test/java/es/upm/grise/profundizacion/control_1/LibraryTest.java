@@ -17,7 +17,7 @@ public class LibraryTest {
 	
 	@BeforeEach
 	public void setUp() {
-		// Creamos de nuevo la libreria antes de cada test
+		// Creamos una nueva libreria antes de cada test
 		lib = new Library();
 	}
 	
